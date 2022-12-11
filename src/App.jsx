@@ -26,7 +26,7 @@ function App() {
     <div className="App py-4 h-100">
       <div className="col-md-6 d-flex flex-column h-100 offset-md-3">
         <div className="d-flex flex-column align-items-center">
-          <h3 className="text-info">Covid19 API Explorer</h3>
+          <h3 className="text-info">Covid API</h3>
           <header className="mb-2"></header>
         </div>
       </div>

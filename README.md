@@ -34,7 +34,7 @@ I've been trying to make a solution that will run at O(log(n)) time complexity b
 I uses Vite to bootstrap the React application.
 For the UI I'm most familiar with Bootstrap so I uses react-bootstrap to build the UI. I refrain using prebuilt templates but in the process of building the UI, I find that my works will be much faster to uses some UI.
 
-> My working experience are mostly fullstack, the frontend I work on usually are based on a working templates, UI Library or UI Framework.
+> My working experience are mostly fullstack, the frontend I work on usually are based on a working templates, UI Library or UI Framework. \
 > Due to not having anydesign, and I'm not very good at designing the UI and sticking with the original forms of Bootstrap without much customization.
 
 Using axios to fetch data from the API and then map it to the UI Table.
@@ -63,3 +63,4 @@ See the section about [deployment](https://vitejs.dev/guide/static-deploy.html) 
 ### `npm run preview`
 Use after `npm run build` to preview the production build in the browser.
 Builds the app for production and preview it in the browser.
+Open [http://127.0.0.1:4173](http://127.0.0.1:4173) to view it in the browser.

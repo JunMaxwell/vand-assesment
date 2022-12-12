@@ -26,9 +26,9 @@ Steps to solve the problem:
 4. If `array` is not empty, repeat the process from step 1.
 5. This solution will not work if the `array` length is less than `target`.
 6. This solution will not work if the `array` length is not divisible by `target`.
-7. This solution will run at O(n*log(n)) time complexity.
+7. This solution will run at `O(n*log(n))` time complexity.
 
-I've been trying to make a solution that will run at O(log(n)) time complexity but I can't think of any.\
+I've been trying to make a solution that will run at `O(log(n))` time complexity but I can't think of any.\
 
 # B: Application
 I uses Vite to bootstrap the React application.
@@ -61,6 +61,6 @@ Your app is ready to be deployed!
 See the section about [deployment](https://vitejs.dev/guide/static-deploy.html) for more information.
 
 ### `npm run preview`
-Use after `npm run build` to preview the production build in the browser.
-Builds the app for production and preview it in the browser.
+Use after `npm run build` to preview the production build in the browser. \
+Builds the app for production and preview it in the browser. \
 Open [http://127.0.0.1:4173](http://127.0.0.1:4173) to view it in the browser.

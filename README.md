@@ -1,29 +1,29 @@
 # A: Algorithm
 Steps to solve the problem: \
-    1. I take `floor` of the length of the `array` divided by `target` as numbers of itteration needed. Called it as `groupLength`. \
-        ```
-        const groupLength = Math.floor(array.length / target)
-        ```\
-    2. Make a `remainder` variable to store the remainder of the length of the `array` % `target`.\
-    3. Run a loop `target` times. \
-        3.1. Run a second loop `groupLength` times. \
-            3.1.1. Push the `array` element at `Random Index` to the `result` array. \
-                ```
-                const randomIndex = Math.floor(Math.random() * array.length)
-                ``` \
-            3.1.2. Remove the `array` element at `Random Index`. \
-                ```
-                array.splice(randomIndex, 1)
-                ``` \
-        3.2. If `remainder` is not 0 or `index` from the parent loop is lower than `remainder`, push the `array` element at `Random Index` to the `result` array and remove the element from the `array`. \
+1. I take `floor` of the length of the `array` divided by `target` as numbers of itteration needed. Called it as `groupLength`. \
+    ```
+    const groupLength = Math.floor(array.length / target)
+    ```\
+2. Make a `remainder` variable to store the remainder of the length of the `array` % `target`.\
+3. Run a loop `target` times. \
+    1. Run a second loop `groupLength` times. \
+        1. Push the `array` element at `Random Index` to the `result` array. \
             ```
             const randomIndex = Math.floor(Math.random() * array.length)
+            ``` \
+        2. Remove the `array` element at `Random Index`. \
+            ```
             array.splice(randomIndex, 1)
             ``` \
-    4. If `array` is not empty, repeat the process from step 1. \
-    5. This solution will not work if the `array` length is less than `target`. \
-    6. This solution will not work if the `array` length is not divisible by `target`. \
-    7. This solution will run at O(n*log(n)) time complexity. \
+    2. If `remainder` is not 0 or `index` from the parent loop is lower than `remainder`, push the `array` element at `Random Index` to the `result` array and remove the element from the `array`. \
+        ```
+        const randomIndex = Math.floor(Math.random() * array.length)
+        array.splice(randomIndex, 1)
+        ``` \
+4. If `array` is not empty, repeat the process from step 1. \
+5. This solution will not work if the `array` length is less than `target`. \
+6. This solution will not work if the `array` length is not divisible by `target`. \
+7. This solution will run at O(n*log(n)) time complexity. \
 
 I've been trying to make a solution that will run at O(log(n)) time complexity but I can't think of any.\
 

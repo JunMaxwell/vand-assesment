@@ -35,7 +35,8 @@ I uses Vite to bootstrap the React application.
 For the UI I'm most familiar with Bootstrap so I uses react-bootstrap to build the UI. I refrain using prebuilt templates but in the process of building the UI, I find that my works will be much faster to uses some UI.
 
 > My working experience are mostly fullstack, the frontend I work on usually are based on a working templates, UI Library or UI Framework. \
-> Due to not having anydesign, and I'm not very good at designing the UI and sticking with the original forms of Bootstrap without much customization.
+> Due to not having any design, and I'm not very good at designing the UI. \
+> I'm sticking with the original forms of Bootstrap without much customization.
 
 Using axios to fetch data from the API and then map it to the UI Table.
 

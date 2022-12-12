@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Nav } from 'react-bootstrap';
+import { Col, Container, FormControl, InputGroup, Nav, Row } from 'react-bootstrap';
 import { Route, Routes, useNavigate } from 'react-router';
 import { Algorithm } from './Algorithm';
 import './App.css'
@@ -31,65 +31,74 @@ function App() {
   }
 
   return (
-    <div className="App py-2 h-100 row">
-      <div className="col d-flex flex-column h-100 justify-content-center">
-        <div className="d-flex flex-column align-items-center">
-          <h3 className="text-info">Thien Y</h3>
-          <header className="mb-2 col w-50">
-            <Nav
-              variant="pills"
-              // activeKey={pathname}
-              onSelect={handleOnSelect}
-              className="d-flex flex-row row justify-content-around align-items-center"
-            >
-              <Nav.Item className='col'>
-                <Nav.Link eventKey="/A">A: Algorithm</Nav.Link>
-              </Nav.Item>
-              <Nav.Item className='col'>
-                <Nav.Link eventKey="/B">B: Application</Nav.Link>
-              </Nav.Item>
-            </Nav>
-          </header>
-        </div>
+    <Container fluid className="App py-2 h-100">
+      <div className="d-flex flex-column h-100 justify-content-center">
+        <Row className="d-flex flex-column justify-content-center align-items-center">
+          <Col className="justify-content-center align-items-center"><h3 className="text-info">Thien Y</h3></Col>
+          <Col>
+            <header className="mb-2">
+              <Nav
+                justify
+                variant="pills"
+                // activeKey={pathname}
+                onSelect={handleOnSelect}
+                className="justify-content-center align-items-center"
+              >
+                <Row className={`justify-content-around ${window.matchMedia("(max-width: 556px)").matches ? "flex-column" : "flex-row"} align-items-center`}>
+                  <Col>
+                    <Nav.Item>
+                      <Nav.Link eventKey="/A">A: Algorithm</Nav.Link>
+                    </Nav.Item>
+                  </Col>
+                  <Col>
+                    <Nav.Item>
+                      <Nav.Link eventKey="/B">B: Application</Nav.Link>
+                    </Nav.Item>
+                  </Col>
+                </Row>
+              </Nav>
+            </header>
+          </Col>
+        </Row>
       </div>
       <Routes>
         <Route path="/A" element={<div className='d-flex mb-2'><Algorithm /></div>} />
         <Route path="/B" element={
-          <div>
-            <div className="d-flex mb-2">
-              <label className="mr-1 mb-0">Filter</label>
-              <input
-                type="text"
-                onChange={(e) => {
-                  let value = e.target.value;
-                  setFilter(value);
-                }}
-              ></input>
-              <div style={{ flex: 1 }} />
-              <label className="mr-1 mb-0">Sort by</label>
-              <select
-                onChange={(e) => {
-                  let value = e.target.value;
-                  setSortBy(value);
-                }}
-                value={sortBy}
-              >
-                <option value={SORT_BY.Active}>Active</option>
-                <option value={SORT_BY.TotalConfirmed}>
-                  Confirmed
-                </option>
-                <option value={SORT_BY.TotalDeaths}>Deaths</option>
-                <option value={SORT_BY.TotalRecovered}>
-                  Recovered
-                </option>
-              </select>
-            </div>
+          <>
+            <Row className={`d-flex ${window.matchMedia("(max-width: 556px)").matches ? "flex-column" : "flex-row"}`}>
+              <Col>
+                <InputGroup className="d-flex mb-2">
+                  <InputGroup.Text>Filter</InputGroup.Text>
+                  <FormControl type='text'
+                    onChange={(e) => {
+                      let value = e.target.value;
+                      setFilter(value);
+                    }} />
+                </InputGroup>
+              </Col>
+              <Col>
+                <InputGroup className="d-flex mb-2">
+                  <InputGroup.Text>Sort by</InputGroup.Text>
+                  <FormControl as="select"
+                    onChange={(e) => {
+                      let value = e.target.value;
+                      setSortBy(value);
+                    }}
+                    value={sortBy}
+                  >
+                    <option value={SORT_BY.Active}>Active</option>
+                    <option value={SORT_BY.TotalConfirmed}>Confirmed</option>
+                    <option value={SORT_BY.TotalDeaths}>Deaths</option>
+                    <option value={SORT_BY.TotalRecovered}>Recovered</option>
+                  </FormControl>
+                </InputGroup>
+              </Col>
+            </Row>
             <DataTable sortBy={sortBy} filter={filter} />
-          </div>
+          </>
         } />
       </Routes>
-
-    </div>);
+    </Container>);
 }
 
 export default App

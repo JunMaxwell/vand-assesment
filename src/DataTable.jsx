@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Spinner, Table, Alert } from 'react-bootstrap';
+import { Spinner, Table, Alert, Container } from 'react-bootstrap';
 import { getCovidSumary } from './AppServices';
 import { CountryDetails } from './CountryDetails';
 
@@ -67,7 +67,7 @@ export const DataTable = ({ sortBy, filter }) => {
     }
 
     return (
-        <div className="h-100 overflow-auto">
+        <Container className="d-flex">
             {
                 loading ? (
                     <div className="h-100 d-flex justify-content-center align-items-center">
@@ -79,7 +79,8 @@ export const DataTable = ({ sortBy, filter }) => {
                             <Alert variant="danger">{error.toString()}</Alert>
                         </div>)
                         :
-                        (<Table responsive striped bordered hover variant='dark'>
+                        (
+                        <Table responsive striped bordered hover variant='dark'>
                             <thead>
                                 <tr>
                                     <th>#</th>
@@ -125,6 +126,6 @@ export const DataTable = ({ sortBy, filter }) => {
                         )
             }
             {selectedCountry && <CountryDetails country={selectedCountry} show={modalShow} onHide={() => setModalShow(false)} />}
-        </div>
+        </Container>
     );
 }
